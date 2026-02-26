@@ -549,17 +549,104 @@ import { useState } from "react";
 // Ввод "email@example.com" → клик → отображается "Отправлено: email@example.com"
 // Очистить и ввести "hello@world.com" → клик → "Отправлено: hello@world.com"
 
+// function Index2(){
+//     const [a, b] = useState('');
+//     return(
+//         <>
+//         <input value={a} onChange={(e) => {
+//             b(e.target.value)
+//         }}></input>
+//         <button onClick={() => {
+//             alert(`Отправлено: ${a}`)
+//             b('')
+//         }}>Отправить</button>
+//         </>
+//     )
+// }
+// export default Index2;
+
+
+// 1. Реализуй селектор: есть кнопка «Показать информацию», 
+// при нажатии появляется блок (div) с тремя параграфами (например: имя, должность, описание). 
+// При повторном нажатии блок скрывается. Дополнительно сделай так, чтобы текст кнопки менялся на «Скрыть информацию». 
+
+
+// function Index2(){
+//     const [a, b] = useState('none');
+//     return(
+//         <>
+//         <button onClick={(e) => {
+//             if(a === 'block'){
+//                 e.target.textContent = 'Скрыть информацию';
+//                 b('none')
+//             } else{
+//                 e.target.textContent = 'Показать информацию';
+//                 b('block')
+//             }
+//         }}>Показать информацию</button>
+//         <div style={{display: a}}>
+//             <p>Name</p>
+//             <p>Work</p>
+//             <p>Description</p>
+//         </div>
+//         </>
+//     )
+// }
+// export default Index2;
+
+
+// function Index2(){
+//     const [a, b] = useState(true);
+//     return(
+//         <>
+//         <button onClick={(e) => {
+//             if(a === true){
+//                 e.target.textContent = 'Скрыть информацию';
+//                 b(false)
+//             } else{
+//                 e.target.textContent = 'Показать информацию';
+//                 b(true)
+//             }
+//         }}>Показать информацию</button>
+//         <div style={{display: a === true ? 'block' : 'none'}}>
+//             <p>Name</p>
+//             <p>Work</p>
+//             <p>Description</p>
+//         </div>
+//         </>
+//     )
+// }
+// export default Index2;
+
+// 2. Создай компонент выбора тарифа: есть три кнопки (Basic, Pro, Premium). 
+// При выборе одного тарифа (посредством нажатия на кнопку) ниже отображается его описание в параграфе. 
+// Активная кнопка должна визуально отличаться.
+
 function Index2(){
-    const [a, b] = useState('');
+    const [active, setActive] = useState();
     return(
         <>
-        <input value={a} onChange={(e) => {
-            b(e.target.value)
-        }}></input>
         <button onClick={() => {
-            alert(`Отправлено: ${a}`)
-            b('')
-        }}>Отправить</button>
+            setActive(1)
+        }}
+        style={{backgroundColor: active === 1 ? 'blue' : 'inherit'}}
+        >Basic</button>
+        
+        <button onClick={(e) => {
+            setActive(2)
+        }}
+        style={{backgroundColor: active === 2 ? 'blue' : 'inherit'}}
+        >Pro</button>
+        
+        <button onClick={(e) => {
+            setActive(3)
+        }}
+        style={{backgroundColor: active === 3 ? 'blue' : 'inherit'}}
+        >Premium</button>
+        
+        <p style={{display: active === 1 ? 'block' : 'none'}}>Description Basic</p>
+        <p style={{display: active === 2 ? 'block' : 'none'}}>Description Pro</p>
+        <p style={{display: active === 3 ? 'block' : 'none'}}>Description Premium</p>
         </>
     )
 }
