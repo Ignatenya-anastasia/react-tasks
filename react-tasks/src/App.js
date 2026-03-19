@@ -4,6 +4,7 @@ import Index1 from './pages/index1';
 import Index2 from './pages/index2';
 import Index3 from './pages/index3';
 import Index4 from './pages/index4';
+import Index5 from './pages/index5';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/2' element={<Index2></Index2>}></Route>
         <Route path='/3' element={<Index3></Index3>}></Route>
         <Route path='/4' element={<Index4></Index4>}></Route>
+        <Route path='/5' element={<Index5></Index5>}></Route>
       </Routes>
     </div>
   );
