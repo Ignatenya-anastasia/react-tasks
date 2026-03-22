@@ -595,21 +595,21 @@ import axios from 'axios';
 // http://numbersapi.com/:id с рандомно сгенерированным числом и отображает результат в
 // консоль.
 
-// function Index5(){
-//     async function getData() {
-//         const response = await axios.get(`http://numbersapi.com/${Math.floor(Math.random() * 10)}`)
-//         console.log(response.data);
+function Index5(){
+    async function getData() {
+        const response = await axios.get(`http://numbersapi.com/${Math.floor(Math.random() * 10)}`)
+        console.log(response.data);
         
-//     }
+    }
 
-//     useEffect(() => {
-//         getData()
-//     }, [])
-//     return(
-//         <>
+    useEffect(() => {
+        getData()
+    }, [])
+    return(
+        <>
         
-//         </>
-//     )
-// }
+        </>
+    )
+}
 
-// export default Index5;
+export default Index5;
