@@ -8,6 +8,8 @@ import Index5 from './pages/index5';
 import Index6 from './pages/index6';
 import GLOBAL from './context';
 import { useState } from 'react';
+import Index7 from './pages/index7';
+import RepeatTasks from './pages/RepeatTasks';
 
 function App() {
   // const obj = {id:1, name: 'Pit', age: 20}
@@ -32,6 +34,8 @@ function App() {
         <Route path='/4' element={<Index4></Index4>}></Route>
         <Route path='/5' element={<Index5></Index5>}></Route>
         <Route path='/6' element={<Index6></Index6>}></Route>
+        <Route path='/7' element={<Index7></Index7>}></Route>
+        <Route path='/repeat' element={<RepeatTasks></RepeatTasks>}></Route>
       </Routes>
       </GLOBAL.Provider>
     </div>
